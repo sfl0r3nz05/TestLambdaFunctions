@@ -1,0 +1,3 @@
+from library.AmazonComprehend.AmzComprehend import amzComprehendPhrases
+from library.AmazonComprehend.AmzComprehend import amzComprehendEntities
+from library.AmazonComprehend.AmzComprehend import amzComprehendSyntax
