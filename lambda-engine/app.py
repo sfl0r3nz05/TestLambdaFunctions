@@ -11,9 +11,9 @@ load_dotenv(dotenv_path=dotenv_path)
 filePath = os.getenv("PATH_INPUT")
 
 archive = computeZip(filePath)
-bucket = 'bucket-name'
+bucket = 'bucket-lambda-1'
 key = 'function.zip'
-response = create_bucket(bucket)
+response = create_bucket(archive, bucket, key)
 
 print(response)
 print(a)

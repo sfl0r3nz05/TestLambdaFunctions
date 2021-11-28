@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   nlp-engine:
-    image: lambda-engine
+    image: sflorenz05/lambda-engine:v1
     container_name: lambda-engine
     hostname: lambda-engine
     working_dir: /administrator

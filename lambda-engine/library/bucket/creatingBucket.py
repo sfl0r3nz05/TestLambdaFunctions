@@ -19,7 +19,7 @@ This lybrary constitutes the entrypoint to integrate Amazon Comprehend funtional
 #    return response
 
 
-def create_bucket(bucket_name):
+def create_bucket(archive, bucket_name, key):
     """Create an S3 bucket in a specified region
 
     If a region is not specified, the bucket is created in the S3 default
@@ -29,17 +29,11 @@ def create_bucket(bucket_name):
     :param region: String region to create bucket in, e.g., 'us-west-2'
     :return: True if bucket created, else False
     """
-        # Create bucket
-    try:
-        lambda_func = boto3.Session(
+ 
+    client = boto3.Session(
             aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"), #Recover access key from env variables
             aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"), #Recover secret access key from env variables
             aws_session_token=os.environ.get("AWS_SESSION_TOKEN"), #Recover session token from env variables
-            region_name=os.environ.get("REGION_NAME")).client('s3')  #Recover region name from env variables
-        location = {'LocationConstraint': os.environ.get("REGION_NAME")}
-        lambda_func.create_bucket(Bucket=bucket_name, CreateBucketConfiguration=location)
-    
-    except ClientError as e:
-        logging.error(e)
-        return False
-    return True
+            region_name=os.environ.get("REGION_NAME")).client('s3')
+    client.create_bucket(Bucket=bucket_name)
+    client.put_object(Body=archive, Bucket=bucket_name, Key=key)
