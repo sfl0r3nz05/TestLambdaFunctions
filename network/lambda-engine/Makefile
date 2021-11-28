@@ -6,13 +6,13 @@ ABSPATH?=$(shell dirname $(shell dirname $(shell dirname ${PWD})))
 WHICHOS := $(shell uname)
 
 start:
-	./scripts/start-nlp-engine.sh
+	./scripts/start-lambda-engine.sh
 
 stop:
-	./scripts/stop-nlp-engine.sh
+	./scripts/stop-lambda-engine.sh
 
 destroy:
-	./scripts/destroy-nlp-engine.sh
+	./scripts/destroy-lambda-engine.sh
 
 ifeq ($(WHICHOS),Darwin)
 	rm *-e
