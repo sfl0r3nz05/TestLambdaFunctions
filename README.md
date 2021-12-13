@@ -14,3 +14,18 @@
 2. [AWS developer guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
 3. [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
 4. [Stackoverflow issue](https://stackoverflow.com/questions/63040090/create-aws-lambda-function-using-boto3-python-code)
+
+## Getting Started
+
+1. `cd ~/TestLambdaFunctions/network/lambda-engine`.
+2. Rename the `.env.example` to `.env`.
+3. Complete `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN` and `REGION_NAME` from AWS Account.
+4. `cd ~/TestLambdaFunctions/lambda-engine/input`.
+5. Modify `lambda_handler_basic.py` with your own lambda function code.
+
+## How to use
+
+1. `cd ~/TestLambdaFunctions/network/lambda-engine`
+2. `make start`
+3. `make stop`
+4. `make destroy`
