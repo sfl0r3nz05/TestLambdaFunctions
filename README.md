@@ -6,7 +6,6 @@
 2. [Manage Docker as non-root user](https://docs.docker.com/engine/install/linux-postinstall/)
 3. Install [docker-compose for ubuntu](https://docs.docker.com/compose/install/)
 4. Install make `sudo apt install make`
-5. Build lambda-engine `docker build -t lambda-engine .`
 
 ## Sources
 
@@ -17,11 +16,21 @@
 
 ## Getting Started
 
-1. `cd ~/TestLambdaFunctions/network/lambda-engine`.
+### Environment variables
+
+1. Go into `cd ~/TestLambdaFunctions/network/lambda-engine`.
 2. Rename the `.env.example` to `.env`.
 3. Complete `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN` and `REGION_NAME` from AWS Account.
-4. `cd ~/TestLambdaFunctions/lambda-engine/input`.
-5. Modify `lambda_handler_basic.py` with your own lambda function code.
+
+### Create lambda functions
+
+1. Go into `cd ~/TestLambdaFunctions/lambda-engine/input`.
+2. Modify `lambda_handler_basic.py` with your own lambda function code.
+
+### Build docker images
+
+1. Go into `cd ~/TestLambdaFunctions/lambda-engine`.
+2. Build lambda-engine `docker build -t lambda-engine .`
 
 ## How to use
 
